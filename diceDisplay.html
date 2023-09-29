@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function intialize()
+        {
+            outputDiv = document.getElementById("buttonHolder");
+        }
+        function rollDice()
+        {
+            const firstRoll = Math.floor((Math.random() *6) + 1);
+            outputDiv.innerHTML = "| First Dice: " + firstRoll + " | ";
+            const secondRoll = Math.floor((Math.random() *6) + 1);
+            outputDiv.innerHTML += "Second Dice: " + secondRoll + " | ";
+            total = firstRoll + secondRoll;
+            outputDiv.innerHTML += "Dice Total: " + total + " | ";
+        }
+    </script>
+    <style>
+        #diceButton
+        {
+            color: black;
+            background-color: beige;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        #buttonHolder{
+            color: black;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body onload = "intialize();">
+    <button id = "diceButton" onclick = "rollDice();">Roll The Dice</button>
+    <div id = "buttonHolder">
+    </div>
+</body>
+</html>
